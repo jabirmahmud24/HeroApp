@@ -3,10 +3,29 @@ import React, { useEffect, useState } from "react";
 
 const Instalation = () => {
   const [instalation, setInstalation] = useState([]);
+  const [sortOrder, setSortOrder] = useState("none");
   useEffect(() => {
     const savedList = JSON.parse(localStorage.getItem("instalation"));
     if (savedList) setInstalation(savedList);
   }, []);
+  const sortedItem = (() => {
+    if (sortOrder === "size-asc") {
+      return [...instalation].sort((a, b) => a.size - b.size);
+    } else if (sortOrder === "size-desc") {
+      return [...instalation].sort((a, b) => b.size - a.size);
+    } else {
+      return instalation;
+    }
+  })();
+  const handleUninstall = (id) => {
+    console.log("clicked");
+    const existingList = JSON.parse(localStorage.getItem("instalation"));
+    let updatedList = existingList.filter((p) => p.id !== id);
+    // For UI instant update
+    setInstalation(updatedList);
+
+    localStorage.setItem("instalation", JSON.stringify(updatedList));
+  };
   return (
     <div>
       <div className="mb-10 space-y-2 text-center">
@@ -16,15 +35,28 @@ const Instalation = () => {
         </p>
       </div>
       <div className="space-y-6">
-        <div>
+        <div className="flex justify-between">
           <div className="mb-5 text-xl font-semibold flex justify-between items-center">
             <div>({instalation.length}) Instaled</div>
           </div>
+
+          <label className="form-control w-full max-w-xs">
+            <select
+              className="select select-border"
+              value={sortOrder}
+              onChange={(e) => setSortOrder(e.target.value)}
+              id=""
+            >
+              <option value="none">Sort by size</option>
+              <option value="size-asc">Low-&gt;High</option>
+              <option value="size-desc">High-&gt;Low</option>
+            </select>
+          </label>
         </div>
       </div>
       <div className="space-y-3">
-        {instalation.map((p) => (
-          <div className="card card-side bg-base-100 shadow-xl p-2">
+        {sortedItem.map((p) => (
+          <div key={p.id} className="card card-side bg-base-100 shadow-xl p-2">
             <figure>
               <img className="h-30 w-30 rounded-xl" src={p.image} />
             </figure>
@@ -46,7 +78,10 @@ const Instalation = () => {
                 </div>
 
                 <div className="card-actions justify-end">
-                  <button className="btn text-white bg-[#00D390]">
+                  <button
+                    onClick={() => handleUninstall(p.id)}
+                    className="btn text-white bg-[#00D390]"
+                  >
                     Uninstall
                   </button>
                 </div>

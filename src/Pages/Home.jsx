@@ -18,7 +18,7 @@ const Home = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {featuredApps.map((app) => (
-          <AppsCard key={apps.id} app={app} />
+          <AppsCard key={app.id} app={app} />
         ))}
       </div>
       <Link to="/apps" className="flex items-center justify-center my-10">
