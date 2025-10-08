@@ -47,7 +47,7 @@ const AppDeatils = () => {
             Devloped by: <span className="text-[#632EE3]">{companyName}</span>
           </p>
           <hr />
-          <div className="flex gap-8 mt-2">
+          <div className="flex flex-col md:flex-row gap-8 mt-2">
             <div>
               <img className="h-8 w-8" src="../../icon-downloads.png" alt="" />
               <p className="text-gray-600 mt-2">Downloads</p>
