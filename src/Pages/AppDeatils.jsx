@@ -20,6 +20,20 @@ const AppDeatils = () => {
     downloads,
     ratings,
   } = app || {};
+  const handleAddToInstalation = () => {
+    const existingList = JSON.parse(localStorage.getItem("instalation"));
+    console.log(existingList);
+    console.log("clicked");
+    let updatedList = [];
+    if (existingList) {
+      const isDuplicate = existingList.some((p) => p.id === app.id);
+      if (isDuplicate) return alert("Sorry vai");
+      updatedList = [...existingList, app];
+    } else {
+      updatedList.push(app);
+    }
+    localStorage.setItem("instalation", JSON.stringify(updatedList));
+  };
   return (
     <div>
       <div className="flex gap-12">
@@ -49,7 +63,10 @@ const AppDeatils = () => {
               <h1 className="text-2xl font-bold">54K</h1>
             </div>
           </div>
-          <button className="btn text-white bg-[#00D390]">
+          <button
+            onClick={() => handleAddToInstalation()}
+            className="btn text-white bg-[#00D390]"
+          >
             Install Now ({size})
           </button>
         </div>

@@ -8,7 +8,7 @@ const AppsCard = ({ app }) => {
   return (
     <Link
       to={`/apps/${id}`}
-      className="card bg-base-100 shadow-sm p-4 border-2 hover:scale-105 transition ease-in-out border-amber-300"
+      className="card bg-base-100 shadow-sm p-4 hover:scale-105 transition ease-in-out"
     >
       <figure className="w-full overflow-hidden">
         <img
