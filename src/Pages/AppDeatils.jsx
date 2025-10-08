@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router";
 import useApps from "../hooks/useApps";
+import RatingChart from "../Components/RatingChart";
 
 const AppDeatils = () => {
   const { id } = useParams();
@@ -71,9 +72,11 @@ const AppDeatils = () => {
           </button>
         </div>
       </div>
-      {/* Chart */}
-      <div className="h-48">
+      {/*Rating Chart Will be plaed here */}
+      <div>
         <h1 className="font-bold">Ratings</h1>
+
+        <RatingChart ratings={ratings} />
       </div>
       {/* Description */}
       <div>
