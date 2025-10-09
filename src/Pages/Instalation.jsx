@@ -1,5 +1,6 @@
 import { Download, Star } from "lucide-react";
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 const Instalation = () => {
   const [instalation, setInstalation] = useState([]);
@@ -18,11 +19,47 @@ const Instalation = () => {
     }
   })();
   const handleUninstall = (id) => {
-    console.log("clicked");
+    // console.log("clicked");
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: false,
+    });
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "It will remove from your local storage!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, uninstall it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          setInstalation(updatedList);
+          swalWithBootstrapButtons.fire({
+            title: "Uninstaled!",
+            text: "Your app has been uninstalled.",
+            icon: "success",
+          });
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Your imaginary file is safe :)",
+            icon: "error",
+          });
+        }
+      });
     const existingList = JSON.parse(localStorage.getItem("instalation"));
     let updatedList = existingList.filter((p) => p.id !== id);
     // For UI instant update
-    setInstalation(updatedList);
+    // setInstalation(updatedList);
 
     localStorage.setItem("instalation", JSON.stringify(updatedList));
   };

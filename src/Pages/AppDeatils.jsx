@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router";
 import useApps from "../hooks/useApps";
 import RatingChart from "../Components/RatingChart";
+import Swal from "sweetalert2";
 
 const AppDeatils = () => {
   const { id } = useParams();
@@ -28,6 +29,24 @@ const AppDeatils = () => {
   const isInstalled = existingList?.some((p) => p.id === app?.id);
 
   const handleAddToInstalation = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "It will saved your local storage!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Install it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.reload();
+        Swal.fire({
+          title: "Installed!",
+          text: "Your app is Installed.",
+          icon: "success",
+        });
+      }
+    });
     if (isInstalled) return; // Prevent action if already installed
 
     const existingList = JSON.parse(localStorage.getItem("instalation"));
@@ -42,7 +61,9 @@ const AppDeatils = () => {
     localStorage.setItem("instalation", JSON.stringify(updatedList));
 
     // Refresh the page to update button state
-    window.location.reload();
+    // if (result.isConfirmed) {
+    //   window.location.reload();
+    // }
   };
 
   return (

@@ -6,13 +6,14 @@ import Instalation from "../Pages/Instalation";
 import RootLayout from "../Layouts/RootLayout";
 import Error404 from "../Pages/Error404";
 import AppDeatils from "../Pages/AppDeatils";
+import LoadingSpinner from "../Components/LoadingSpinner";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     errorElement: <Error404 />,
-    hydrateFallbackElement: <p>Loading... this is from hydrate fallback.</p>,
+    hydrateFallbackElement: <LoadingSpinner />,
     children: [
       {
         path: "/",

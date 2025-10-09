@@ -1,4 +1,4 @@
-import { Github } from "lucide-react";
+import { Download, FolderCode, Github, House } from "lucide-react";
 import React from "react";
 import { NavLink } from "react-router";
 
@@ -50,13 +50,19 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 font-semibold">
           <li className="hover:font-bold hover:text-[#632EE3] hover:underline">
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">
+              <House color="white" size={22} /> Home
+            </NavLink>
           </li>
           <li className="hover:font-bold hover:text-[#632EE3] hover:underline">
-            <NavLink to="/apps">Apps</NavLink>
+            <NavLink to="/apps">
+              <FolderCode color="white" size={22} /> Apps
+            </NavLink>
           </li>
           <li className="hover:font-bold hover:text-[#632EE3] hover:underline">
-            <NavLink to="/instalation">Instalation</NavLink>
+            <NavLink to="/instalation">
+              <Download color="white" size={22} /> Instalation
+            </NavLink>
           </li>
         </ul>
       </div>

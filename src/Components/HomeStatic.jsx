@@ -11,7 +11,7 @@ const HomeStatic = () => {
           <span className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
             Productive
           </span>
-          Apps
+          &nbsp;Apps
         </h1>
         <div className="w-10/12 md:w-9/12 lg:w-7/12">
           <p className="text-gray-500">

@@ -1,17 +1,22 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, useNavigation } from "react-router";
 import AppsCard from "../Components/AppsCard";
 import useApps from "../hooks/useApps";
 import HomeStatic from "../Components/HomeStatic";
+import LoadingSpinner from "../Components/LoadingSpinner";
 
 const Home = () => {
   // const apps = useLoaderData();
   const { apps, loading, error } = useApps();
-  const featuredApps = apps.slice(0, 8);
+  const featuredApps = apps.slice(12, 20);
 
   return (
     <div>
       <HomeStatic />
+      {/* {navigation?.state==='loading' ? (
+        <LoadingSpinner/>
+      ) : ()
+    } */}
       <div className="mb-10 space-y-2 text-center mt-20">
         <h1 className="text-4xl font-bold">Trending Apps</h1>
         <p className="text-gray-500">
