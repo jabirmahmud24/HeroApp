@@ -1,8 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content grid-rows-2 p-10">
+    <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content grid-rows-2 p-10 mt-10">
+      <NavLink to="/" className="text-xl">
+        <img className="h-8 w-8" src="/logo.png" alt="" />
+        <h1 className="text-2xl font-bold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
+          HERO.IO
+        </h1>
+      </NavLink>
       <nav>
         <h6 className="footer-title">Services</h6>
         <a className="link link-hover">Branding</a>
@@ -30,13 +37,7 @@ const Footer = () => {
         <a className="link link-hover">Facebook</a>
         <a className="link link-hover">GitHub</a>
       </nav>
-      <nav>
-        <h6 className="footer-title">Explore</h6>
-        <a className="link link-hover">Features</a>
-        <a className="link link-hover">Enterprise</a>
-        <a className="link link-hover">Security</a>
-        <a className="link link-hover">Pricing</a>
-      </nav>
+
       <nav>
         <h6 className="footer-title">Apps</h6>
         <a className="link link-hover">Mac</a>

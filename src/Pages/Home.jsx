@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 import AppsCard from "../Components/AppsCard";
 import useApps from "../hooks/useApps";
+import HomeStatic from "../Components/HomeStatic";
 
 const Home = () => {
   // const apps = useLoaderData();
@@ -10,13 +11,14 @@ const Home = () => {
 
   return (
     <div>
-      <div className="mb-10 space-y-2 text-center">
+      <HomeStatic />
+      <div className="mb-10 space-y-2 text-center mt-20">
         <h1 className="text-4xl font-bold">Trending Apps</h1>
         <p className="text-gray-500">
           Explore All Trending Apps on the Market developed by us
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-8 md:px-16 lg-px-20">
         {featuredApps.map((app) => (
           <AppsCard key={app.id} app={app} />
         ))}

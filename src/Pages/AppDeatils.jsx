@@ -8,8 +8,9 @@ const AppDeatils = () => {
   const { apps, loading, error } = useApps();
 
   const app = apps.find((p) => String(p.id) === id);
-  //   console.log(app);
+
   if (loading) return <p>Loading...........</p>;
+
   const {
     image,
     title,
@@ -21,32 +22,41 @@ const AppDeatils = () => {
     downloads,
     ratings,
   } = app || {};
+
+  // Check if app is already installed
+  const existingList = JSON.parse(localStorage.getItem("instalation"));
+  const isInstalled = existingList?.some((p) => p.id === app?.id);
+
   const handleAddToInstalation = () => {
+    if (isInstalled) return; // Prevent action if already installed
+
     const existingList = JSON.parse(localStorage.getItem("instalation"));
-    console.log(existingList);
-    console.log("clicked");
     let updatedList = [];
+
     if (existingList) {
-      const isDuplicate = existingList.some((p) => p.id === app.id);
-      if (isDuplicate) return alert("Sorry vai");
       updatedList = [...existingList, app];
     } else {
       updatedList.push(app);
     }
+
     localStorage.setItem("instalation", JSON.stringify(updatedList));
+
+    // Refresh the page to update button state
+    window.location.reload();
   };
+
   return (
-    <div>
+    <div className="px-8 md:px-16 lg:px-20">
       <div className="flex gap-12">
         <div>
-          <img className="w-48 h-48" src={image} alt="" />
+          <img className="w-48 h-48 rounded-xl" src={image} alt="" />
         </div>
         <div>
           <h1 className="text-2xl font-bold">{title}</h1>
           <p>
             Devloped by: <span className="text-[#632EE3]">{companyName}</span>
           </p>
-          <hr />
+          <div className="border-1 border-gray-300 mt-2"></div>
           <div className="flex flex-col md:flex-row gap-8 mt-2">
             <div>
               <img className="h-8 w-8" src="../../icon-downloads.png" alt="" />
@@ -64,22 +74,26 @@ const AppDeatils = () => {
               <h1 className="text-2xl font-bold">54K</h1>
             </div>
           </div>
+
           <button
             onClick={() => handleAddToInstalation()}
-            className="btn text-white bg-[#00D390]"
+            className={`btn text-white ${
+              isInstalled ? "bg-[#2dce80] cursor-not-allowed" : "bg-[#00D390]"
+            }`}
+            disabled={isInstalled}
           >
-            Install Now ({size})
+            {isInstalled ? "Installed" : `Install Now (${size})`}
           </button>
         </div>
       </div>
+      <div className="border-1 border-gray-300 mt-2"></div>
       {/*Rating Chart Will be plaed here */}
-      <div>
+      <div className="mt-5">
         <h1 className="font-bold">Ratings</h1>
-
         <RatingChart ratings={ratings} />
       </div>
       {/* Description */}
-      <div>
+      <div className="mt-5">
         <h1 className="font-bold">Description</h1>
         <p className="text-gray-500">{description}</p>
       </div>

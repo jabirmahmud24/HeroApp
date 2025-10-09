@@ -27,7 +27,7 @@ const Instalation = () => {
     localStorage.setItem("instalation", JSON.stringify(updatedList));
   };
   return (
-    <div>
+    <div className="px-8 md:px-12 lg:px-20">
       <div className="mb-10 space-y-2 text-center">
         <h1 className="text-4xl font-bold">Your Installed Apps</h1>
         <p className="text-gray-500">
@@ -54,7 +54,7 @@ const Instalation = () => {
           </label>
         </div>
       </div>
-      <div className="space-y-3">
+      <div className="space-y-3 mt-10">
         {sortedItem.map((p) => (
           <div key={p.id} className="card card-side bg-base-100 shadow-xl p-2">
             <figure>

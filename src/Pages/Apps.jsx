@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useApps from "../hooks/useApps";
 import AppsCard from "../Components/AppsCard";
+import ErrorAppNotFound from "./ErrorAppNotFound";
 
 const Apps = () => {
   const [search, setSearch] = useState("");
@@ -13,7 +14,7 @@ const Apps = () => {
   // console.log(searchedApps);
 
   return (
-    <div>
+    <div className="px-8 md:px-16 lg-px-20">
       <div>
         <div>
           <div className="mb-10 space-y-2 text-center">
@@ -25,6 +26,7 @@ const Apps = () => {
           </div>
           <div className="mb-5 text-xl font-semibold flex justify-between items-center">
             <div>({searchedApps.length}) Apps Found</div>
+
             <div>
               <label className="input">
                 <svg
@@ -53,11 +55,16 @@ const Apps = () => {
               </label>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {searchedApps.map((app) => (
-              <AppsCard key={app.id} app={app} />
-            ))}
-          </div>
+          {/* Conditional rendering */}
+          {searchedApps.length === 0 ? (
+            <ErrorAppNotFound />
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {searchedApps.map((app) => (
+                <AppsCard key={app.id} app={app} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

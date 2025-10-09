@@ -28,28 +28,20 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a>Item 1</a>
+            <li className="hover:font-bold hover:text-[#632EE3] hover:underline">
+              <NavLink to="/">Home</NavLink>
             </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+            <li className="hover:font-bold hover:text-[#632EE3] hover:underline">
+              <NavLink to="/apps">Apps</NavLink>
             </li>
-            <li>
-              <a>Item 3</a>
+            <li className="hover:font-bold hover:text-[#632EE3] hover:underline">
+              <NavLink to="/instalation">Instalation</NavLink>
             </li>
           </ul>
         </div>
 
         <NavLink to="/" className="btn btn-ghost text-xl">
-          <img className="h-8 w-8" src="/src/assets/logo.png" alt="" />
+          <img className="h-8 w-8" src="/logo.png" alt="" />
           <h1 className="text-2xl font-bold bg-gradient-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
             HERO.IO
           </h1>
@@ -71,7 +63,7 @@ const Navbar = () => {
       <div className="navbar-end">
         <NavLink
           to="https://github.com/jabirmahmud24"
-          className="btn text-white font-bold bg-gradient-to-r from-[#632EE3]
+          className="btn text-white font-semibold bg-gradient-to-r from-[#632EE3]
           to-[#9F62F2]"
         >
           <Github color="white" size={22} /> Contribute
