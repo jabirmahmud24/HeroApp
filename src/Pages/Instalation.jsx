@@ -41,7 +41,7 @@ const Instalation = () => {
         if (result.isConfirmed) {
           setInstalation(updatedList);
           swalWithBootstrapButtons.fire({
-            title: "Uninstaled!",
+            title: "Uninstal!",
             text: "Your app has been uninstalled.",
             icon: "success",
           });

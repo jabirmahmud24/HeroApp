@@ -98,8 +98,8 @@ const AppDeatils = () => {
 
           <button
             onClick={() => handleAddToInstalation()}
-            className={`btn text-white ${
-              isInstalled ? "bg-[#2dce80] cursor-not-allowed" : "bg-[#00D390]"
+            className={` text-white py-2 px-4 rounded-sm disabled:bg-[#3d7fbe] disabled:cursor-not-allowed ${
+              isInstalled ? "bg-[#00D390]" : "bg-[#00D390]"
             }`}
             disabled={isInstalled}
           >

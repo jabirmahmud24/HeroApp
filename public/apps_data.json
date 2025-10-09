@@ -1,6 +1,6 @@
 [
   {
-    "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/color/480/whatsapp--v1.png",
     "title": "WhatsApp Messenger",
     "companyName": "WhatsApp LLC",
     "id": 1,
@@ -18,7 +18,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/color/480/instagram-new--v1.png",
     "title": "Instagram",
     "companyName": "Instagram",
     "id": 2,
@@ -36,7 +36,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1563906267088-b029e7101114?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/3d-fluency/480/spotify-logo.png",
     "title": "Spotify: Music and Podcasts",
     "companyName": "Spotify Ltd.",
     "id": 3,
@@ -54,7 +54,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/ios-filled/480/tiktok--v1.png",
     "title": "TikTok",
     "companyName": "TikTok Pte. Ltd.",
     "id": 4,
@@ -72,7 +72,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/clouds/480/netflix.png",
     "title": "Netflix",
     "companyName": "Netflix, Inc.",
     "id": 5,
@@ -90,7 +90,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1516542076529-1ea3854896f2?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/color/480/telegram-app--v1.png",
     "title": "Telegram",
     "companyName": "Telegram FZ-LLC",
     "id": 6,
@@ -108,7 +108,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1580983218765-e530cd912fe0?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/plasticine/480/snapchat.png",
     "title": "Snapchat",
     "companyName": "Snap Inc.",
     "id": 7,
@@ -126,7 +126,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/color/480/facebook-new.png",
     "title": "Facebook",
     "companyName": "Meta Platforms, Inc.",
     "id": 8,
@@ -144,7 +144,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/fluency/480/zoom.png",
     "title": "Zoom Cloud Meetings",
     "companyName": "Zoom Video Communications",
     "id": 9,
@@ -162,7 +162,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/color/480/duolingo-logo.png",
     "title": "Duolingo: Language Lessons",
     "companyName": "Duolingo",
     "id": 10,
@@ -180,7 +180,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/doodle/480/uber-app.png",
     "title": "Uber: Request a Ride",
     "companyName": "Uber Technologies, Inc.",
     "id": 11,
@@ -198,7 +198,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/color/480/shazam.png",
     "title": "Shazam: Music Discovery",
     "companyName": "Apple Inc.",
     "id": 12,
@@ -216,7 +216,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/doodle/480/amazon.png",
     "title": "Amazon Shopping",
     "companyName": "Amazon Mobile LLC",
     "id": 13,
@@ -234,7 +234,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/color-glass/480/microsoft-teams.png",
     "title": "Microsoft Teams",
     "companyName": "Microsoft Corporation",
     "id": 14,
@@ -252,7 +252,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/color/480/adobe-photoshop--v1.png",
     "title": "Adobe Photoshop Express",
     "companyName": "Adobe Inc.",
     "id": 15,
@@ -270,7 +270,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/sf-regular/480/meditation-guru.png",
     "title": "Headspace: Meditation & Sleep",
     "companyName": "Headspace Inc.",
     "id": 16,
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/doodle/480/evernote--v1.png",
     "title": "Evernote: Note Organizer",
     "companyName": "Evernote Corporation",
     "id": 17,
@@ -306,7 +306,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/bubbles/480/exercise.png",
     "title": "Strava: Run & Bike Tracker",
     "companyName": "Strava, Inc.",
     "id": 18,
@@ -324,7 +324,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/fluency/480/canva.png",
     "title": "Canva: Design Photo Video",
     "companyName": "Canva Pty Ltd",
     "id": 19,
@@ -342,7 +342,7 @@
     ]
   },
   {
-    "image": "https://images.unsplash.com/photo-1616499452965-5228803e1fe7?w=400&h=400&fit=crop",
+    "image": "https://img.icons8.com/ios-filled/480/discord-logo.png",
     "title": "Discord: Chat & Video Talk",
     "companyName": "Discord Inc.",
     "id": 20,
