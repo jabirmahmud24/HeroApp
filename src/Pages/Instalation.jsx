@@ -95,7 +95,10 @@ const Instalation = () => {
         {sortedItem.map((p) => (
           <div key={p.id} className="card card-side bg-base-100 shadow-xl p-2">
             <figure>
-              <img className="h-30 w-30 rounded-xl" src={p.image} />
+              <img
+                className="h-15 w-15 md:h-20 md:w-20 lg:h-30 lg:w-30 mx-2 rounded-xl"
+                src={p.image}
+              />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{p.title}</h2>

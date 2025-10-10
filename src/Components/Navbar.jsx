@@ -29,13 +29,53 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li className="hover:font-bold hover:text-[#632EE3] hover:underline">
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/">
+                {({ isActive }) => (
+                  <>
+                    <House color={isActive ? "#632EE3" : "grey"} size={22} />
+                    <span
+                      className={
+                        isActive ? "font-bold text-[#632EE3] underline" : ""
+                      }
+                    >
+                      Home
+                    </span>
+                  </>
+                )}
+              </NavLink>
             </li>
             <li className="hover:font-bold hover:text-[#632EE3] hover:underline">
-              <NavLink to="/apps">Apps</NavLink>
+              <NavLink
+                to="/apps"
+                className={({ isActive }) =>
+                  isActive ? "font-bold text-[#632EE3] underline" : ""
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    <FolderCode
+                      color={isActive ? "#632EE3" : "grey"}
+                      size={22}
+                    />
+                    Apps
+                  </>
+                )}
+              </NavLink>
             </li>
             <li className="hover:font-bold hover:text-[#632EE3] hover:underline">
-              <NavLink to="/instalation">Instalation</NavLink>
+              <NavLink
+                to="/instalation"
+                className={({ isActive }) =>
+                  isActive ? "font-bold text-[#632EE3] underline" : ""
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    <Download color={isActive ? "#632EE3" : "grey"} size={22} />
+                    Instalation
+                  </>
+                )}
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -51,17 +91,44 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 font-semibold">
           <li className="hover:font-bold hover:text-[#632EE3] hover:underline">
             <NavLink to="/">
-              <House color="white" size={22} /> Home
+              {({ isActive }) => (
+                <>
+                  <House color={isActive ? "#632EE3" : "grey"} size={22} />
+                  <span className={isActive ? "font-bold text-[#632EE3]" : ""}>
+                    Home
+                  </span>
+                </>
+              )}
             </NavLink>
           </li>
           <li className="hover:font-bold hover:text-[#632EE3] hover:underline">
-            <NavLink to="/apps">
-              <FolderCode color="white" size={22} /> Apps
+            <NavLink
+              to="/apps"
+              className={({ isActive }) =>
+                isActive ? "font-bold text-[#632EE3]" : ""
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  <FolderCode color={isActive ? "#632EE3" : "grey"} size={22} />
+                  Apps
+                </>
+              )}
             </NavLink>
           </li>
           <li className="hover:font-bold hover:text-[#632EE3] hover:underline">
-            <NavLink to="/instalation">
-              <Download color="white" size={22} /> Instalation
+            <NavLink
+              to="/instalation"
+              className={({ isActive }) =>
+                isActive ? "font-bold text-[#632EE3]" : ""
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  <Download color={isActive ? "#632EE3" : "grey"} size={22} />
+                  Instalation
+                </>
+              )}
             </NavLink>
           </li>
         </ul>

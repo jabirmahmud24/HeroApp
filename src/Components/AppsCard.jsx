@@ -4,6 +4,16 @@ import { Link } from "react-router";
 
 const AppsCard = ({ app }) => {
   const { title, image, downloads, ratingAvg, id } = app;
+  const formatNumber = (number) => {
+    if (number >= 10000000) {
+      return `${(number / 10000000).toFixed(1)}M`;
+    } else if (number >= 100000) {
+      return `${(number / 100000).toFixed(1)}L`;
+    } else if (number >= 1000) {
+      return `${(number / 1000).toFixed(1)}K`;
+    }
+    return number.toString();
+  };
 
   return (
     <Link
@@ -23,11 +33,11 @@ const AppsCard = ({ app }) => {
         <div className="card-actions justify-between">
           <div className="badge text-[#00D390] font-semibold bg-[#F1F5E8]">
             <Download color="#00D390" size={16} />
-            {downloads / 1000000000}M
+            {formatNumber(downloads)}
           </div>
           <div className="badge bg-[#FFF0E1] text-[#FF8811] font-semibold">
             <Star color="#FF8811" size={16} />
-            {ratingAvg}
+            {formatNumber(ratingAvg)}
           </div>
         </div>
       </div>

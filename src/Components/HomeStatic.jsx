@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 import { Line } from "recharts";
+import LoadingSpinner from "./LoadingSpinner";
 
 const HomeStatic = () => {
   return (

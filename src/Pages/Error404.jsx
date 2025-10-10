@@ -8,7 +8,7 @@ const Error404 = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <Navbar />
-      <img src="/public/error-404.png" alt="Error" />
+      <img src="/error-404.png" alt="Error" />
       <div className="text-center space-y-3 my-5">
         <h1 className="text-4xl font-bold">Opps! Page Not Found</h1>
         <p className="text-gray-600">The Page You are looking Is not Found!</p>

@@ -23,6 +23,16 @@ const AppDeatils = () => {
     downloads,
     ratings,
   } = app || {};
+  const formatNumber = (number) => {
+    if (number >= 10000000) {
+      return `${(number / 10000000).toFixed(1)}M`; // Million
+    } else if (number >= 100000) {
+      return `${(number / 100000).toFixed(1)}L`; // Lakh
+    } else if (number >= 1000) {
+      return `${(number / 1000).toFixed(1)}K`; // Thousand
+    }
+    return number.toString();
+  };
 
   // Check if app is already installed
   const existingList = JSON.parse(localStorage.getItem("instalation"));
@@ -39,14 +49,15 @@ const AppDeatils = () => {
       confirmButtonText: "Yes, Install it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.reload();
         Swal.fire({
           title: "Installed!",
           text: "Your app is Installed.",
           icon: "success",
         });
+        window.location.reload();
       }
     });
+
     if (isInstalled) return; // Prevent action if already installed
 
     const existingList = JSON.parse(localStorage.getItem("instalation"));
@@ -70,7 +81,11 @@ const AppDeatils = () => {
     <div className="px-8 md:px-16 lg:px-20">
       <div className="flex gap-12">
         <div>
-          <img className="w-48 h-48 rounded-xl" src={image} alt="" />
+          <img
+            className="w-15 h-15 md:w-28 md:h-28 lg:w-48 lg:h-48  rounded-xl"
+            src={image}
+            alt=""
+          />
         </div>
         <div>
           <h1 className="text-2xl font-bold">{title}</h1>
@@ -82,23 +97,23 @@ const AppDeatils = () => {
             <div>
               <img className="h-8 w-8" src="../../icon-downloads.png" alt="" />
               <p className="text-gray-600 mt-2">Downloads</p>
-              <h1 className="text-2xl font-bold">8M+</h1>
+              <h1 className="text-2xl font-bold">{formatNumber(downloads)}</h1>
             </div>
             <div>
               <img className="h-8 w-8" src="../../icon-ratings.png" alt="" />
               <p className="text-gray-600 mt-2">Avarage Ratings</p>
-              <h1 className="text-2xl font-bold">4.9</h1>
+              <h1 className="text-2xl font-bold">{formatNumber(ratingAvg)}</h1>
             </div>
             <div>
               <img className="h-8 w-8" src="../../icon-review.png" alt="" />
               <p className="text-gray-600 mt-2">Total Reviews</p>
-              <h1 className="text-2xl font-bold">54K</h1>
+              <h1 className="text-2xl font-bold">{formatNumber(reviews)}</h1>
             </div>
           </div>
 
           <button
             onClick={() => handleAddToInstalation()}
-            className={` text-white py-2 px-4 rounded-sm disabled:bg-[#3d7fbe] disabled:cursor-not-allowed ${
+            className={` text-white py-2 px-4 rounded-sm disabled:bg-[#3d7fbe] disabled:shadow-2xl disabled:cursor-not-allowed ${
               isInstalled ? "bg-[#00D390]" : "bg-[#00D390]"
             }`}
             disabled={isInstalled}

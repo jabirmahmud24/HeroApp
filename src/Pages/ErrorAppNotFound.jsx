@@ -5,7 +5,7 @@ const Error404 = () => {
   const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center justify-center">
-      <img src="/public/App-Error.png" alt="Error" />
+      <img src="/App-Error.png" alt="Error" />
       <div className="text-center space-y-3 my-5">
         <h1 className="text-4xl font-bold">Opps! Apps Not Found</h1>
         <p className="text-gray-600">The Page You are looking Is not Found.</p>
